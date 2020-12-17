@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title></title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../static/plugin/layui/css/layui.css" th:href="@{/plugin/layui/css/layui.css}">
+		<link rel="stylesheet" href="../../static/css/mamaintenance.css" th:href="@{/css/mamaintenance.css}">
+	</head>
+
+	<body class="layui-layout-body">
+
+		<div id="mainFrame" class="layui-row" style="height: 100vh;">
+			<div id="leftFrame" class="layui-col-md3">
+				<div class="layui-collapse" lay-accordion>
+					<div class="layui-colla-item">
+						<h2 class="layui-colla-title">申请维护列表</h2>
+						<div class="layui-colla-content layui-show applyWin">
+							<a v-for="item in applyAintList" href="javascript:0;" @click="openApplyPage(item)" class="list-group-item">
+								<span>编号：{{item.applyId}}</span>
+								<span>&nbsp;&nbsp;标题：{{item.title}}</span>
+							</a>
+						</div>
+					</div>
+					<div class="layui-colla-item">
+						<h2 class="layui-colla-title">历史维护情况</h2>
+						<div class="layui-colla-content applyWin">
+							<a v-for="item in historyAintList" href="javascript:0;" @click="openHistoryPage(item)" class="list-group-item">
+								<span>编号：{{item.applyId}}</span>
+								<span>&nbsp;&nbsp;标题：{{item.title}}</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="rightFrame" class="layui-col-md9">
+				<div id="mainWin">
+					<div class="layui-bg-gray" id="btnWin">
+						<span id="applynameh">申请人：</span><span id="applyname">撒旦法</span>
+						<span id="applytimeh">时间：</span><span id="applytime">2020-11-31 11:15:00</span>
+						<span id="titleh">主题：</span><span id="title">飞洒刚发布是梵蒂冈双方各辅导</span>
+					</div>
+					<div v-show="isDeal" id="contentBigWin">
+						<div id="contentSmallWin">
+							<h3>维护内容</h3>
+							<p>
+								<ol id="oneListWin">
+									<li class="olSerialNumber" v-for="item in maintenanceContent">{{item}}</li>
+								</ol>
+							</p>
+						</div>
+						<div style="background-color: #33adff">
+						<textarea id="demo" style="display: none;"></textarea></div>
+					</div>
+					<div v-show="!isDeal" id="twoContentBigWin">
+						<div id="id1_1">
+							<h3>维护内容</h3>
+							<p>
+								<ol id="id1_1_1">
+									<li class="olSerialNumber" v-for="item in maintenanceContent">{{item}}</li>
+								</ol>
+							</p>
+						</div>
+						<div id="id2_1">
+							<h3>相应处理</h3>
+							<p>
+								<ol	 id="id2_1_1">
+									<li class="olSerialNumber" v-for="item in dealAccordingly">{{item}}</li>
+								</ol>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+		<script src="../../static/plugin/layui/layui.js" th:src="@{/plugin/layui/layui.js}"></script>
+		<script src="../../static/js/mamaintenance.js" th:src="@{/js/mamaintenance.js}"></script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../static/css/layui.css"  media="all">
+    <link rel="stylesheet" href="../../static/css/temanapplyfor.css">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body>
+<br><br>
+&emsp; &emsp; &emsp; &emsp;   合同预览：
+<br><br>
+&emsp; &emsp; &emsp; &emsp;<button class="layui-btn" lay-submit lay-filter="*" >下载合同</button>
+<button class="layui-btn" lay-submit lay-filter="*" >上传合同</button>
+<br><br>
+<form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+    <div class="layui-form-item">
+        <label class="layui-form-label">申请人：</label>
+        <div class="layui-input-block">
+            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input" style="width: 200px;height:30px;">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">身份证号：</label>
+        <div class="layui-input-block">
+            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input" style="width: 200px;height:30px;">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">所在学校：</label>
+        <div class="layui-input-block">
+            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input" style="width: 200px;height:30px;">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">申请理由：</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea" style="width: 800px;height:80px;" ></textarea>
+        </div>
+    </div>
+    <div>
+        <div class="layui-upload" id="left">
+            <button type="button" class="layui-btn" id="test1" style="max-width: 196px">学校营业执照</button>
+            <div class="layui-upload-list">
+                <img class="layui-upload-img" id="demo1"style="max-width: 196px">
+                <p id="demoText"></p>
+            </div>
+        </div>
+        <div class="layui-upload" id="right">
+            <button type="button" class="layui-btn" id="test2">教师执照</button>
+            <div class="layui-upload-list">
+                <img class="layui-upload-img" id="demo2"style="max-width: 196px">
+                <p id="demoText2"></p>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item" id="top">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="*">提交申请</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+
+    <script src="../../static/plugin/layui/layui.js" charset="utf-8"></script>
+    <script src="../../static/js/temanapplyfor.js" charset="utf-8"></script>
+    <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+
+</form>
+</body>
+</html>

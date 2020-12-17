@@ -1,0 +1,21 @@
+#text1{
+    width: 100%;
+    height: 300px;
+    border:1px solid #666;
+}
+.chat-box{
+    margin:40px;
+    width: 80%;
+    text-align: center;
+    height: 550px;
+    padding: 40px
+}
+.btn{
+    float: right;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+#div-button{
+    text-align: right;
+    padding-top: 10px;
+}

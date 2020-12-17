@@ -1,0 +1,15 @@
+.layui-layout-admin .layui-header {
+    background-color: #258084;
+}
+.layui-side,.layui-nav,.layui-side-scroll
+{
+    background-color:#DDEFF1;
+}
+
+.bj{
+    margin: auto;
+    top: 20px;
+    height: 65px;
+    text-align: left;
+
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加课程</title>
+    <link rel="stylesheet" href="../../static/plugin/layui/css/layui.css" th:href="@{/plugin/layui/css/layui.css}">
+</head>
+<body>
+    <div class="layui-container">
+        <form class="layui-form layui-form-pane">
+            <div class="layui-form-item" pane>
+                <label class="layui-form-label">课程名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="courseName" required lay-verify="required" placeholder="请输入课程名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item" pane>
+                <label class="layui-form-label">课程类型</label>
+                <div class="layui-input-block">
+                    <div id="test1" name="courseType" class="demo-transfer"></div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane>
+                <label class="layui-form-label">课程简介</label>
+                <div class="layui-input-inline">
+                    <textarea name="courseBriefIntroduction" required lay-verify="required" placeholder="请输入" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item" pane>
+                <label class="layui-form-label">任课教师</label>
+                <div class="layui-input-block">
+                    <div id="test2" name="teacher" class="demo-transfer"></div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane>
+                <label class="layui-form-label">可选班级</label>
+                <div class="layui-input-block">
+                    <div id="test3" name="optionalClass" class="demo-transfer"></div>
+                </div>
+            </div>
+            <div class="layui-form-item" pane>
+                <label class="layui-form-label">学分</label>
+                <div class="layui-input-inline">
+                    <select name="credit" lay-verify="required" lay-search="">
+                        <option value="">直接选择或搜索选择</option>
+                        <option value="1">1.0</option>
+                        <option value="2">1.5</option>
+                        <option value="3">2.0</option>
+                        <option value="4">2.5</option>
+                        <option value="5">3.0</option>
+                        <option value="6">3.5</option>
+                        <option value="7">4.0</option>
+                        <option value="8">4.5</option>
+                        <option value="9">5.0</option>
+                        <option value="10">5.5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item" pane>
+                <label class="layui-form-label">学时</label>
+                <div class="layui-input-inline">
+                    <select name="classHours" lay-verify="required" lay-search="">
+                        <option value="">直接选择或搜索选择</option>
+                        <option value="1">course1</option>
+                        <option value="2">course2</option>
+                        <option value="3">course3</option>
+                        <option value="4">course4</option>
+                        <option value="5">course5</option>
+                        <option value="6">course6</option>
+                        <option value="7">course7</option>
+                        <option value="8">course8</option>
+                        <option value="9">course9</option>
+                        <option value="10">course10</option>
+                        <option value="11">course11</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item" pane>
+                <label class="layui-form-label">可选人数</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="optionalNumberOfPeople" required lay-verify="required" placeholder="请输入可选人数" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block" id="btnArr">
+                    <button type="button" class="layui-btn layui-btn-radius layui-btn-normal">添加</button>
+                    <button type="button" class="layui-btn layui-btn-radius layui-btn-warm">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="../../static/plugin/layui/layui.js" th:src="@{/plugin/layui/layui.js}"></script>
+    <script src="../../static/js/teAddCourse.js" th:src="@{/js/teAddCourse.js}"></script>
+
+</body>
+</html>

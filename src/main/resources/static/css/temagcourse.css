@@ -1,0 +1,15 @@
+.table{
+    height: auto;white-space: normal;
+}
+.layui-layer-own1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*.layui-tab-title{border-bottom: none;}!* 重置 - 去掉下划线 *!*/
+/*.layui-tab-title .layui-this{background: #0fffd1;}!* 增加背景 *!*/
+/*.layui-tab-title .layui-this:after{border: none;}!* 重置 -this无边框 *!*/
+/*.layui-tab-title li{display: list-item;}!* 重置 -纵向显示 *!*/
+#btnArr{
+    margin-left: 80%;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校级信息管理</title>
+    <link rel="stylesheet" href="../../static/plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="../../static/css/temagschinfo.css">
+
+
+</head>
+
+<body>
+    <div class="layui-side layui-bg-black">
+
+        <div class="layui-side-scroll nav">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item"><a href="javascript:;">学校简介</a></li>
+                <li class="layui-nav-item"><a href="javascript:;">现任领导</a></li>
+                <li class="layui-nav-item"><a href="javascript:;">学校标识</a></li>
+                <li class="layui-nav-item"><a href="javascript:;">学校位置</a></li>
+                <li class="layui-nav-item"><a href="javascript:;">页面信息</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+
+        <div class="list list1">
+            <div class="title">
+                <div></div>
+                <strong>学校简介管理</strong>
+                <a class="layui-btn layui-btn-normal preview" href="./schoolInfo.html" target="_blank">页面预览</a>
+            </div>
+            <table id="list1" lay-filter="list1"></table>
+            <script type="text/html" id="toolbar1">
+<!--                <a class="layui-btn" lay-event="edit">增加</a>-->
+<!--                <a class="layui-btn layui-btn-danger" lay-event="del">删除</a>-->
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" lay-event="edit">
+                    <i class="layui-icon"></i>添加内容
+                </button>
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" lay-event="del">
+                    <i class="layui-icon"></i>删除内容
+                </button>
+            </script>
+            <script type="text/html" id="barDemo1">
+                <a class="layui-btn layui-btn-xs " lay-event="preinsert ">上一行插入</a>
+                <a class="layui-btn layui-btn-xs " lay-event="edit">编辑</a>
+                <a class="layui-btn layui-btn-xs " lay-event="nexinsert">下一行插入</a>
+            </script>
+        </div>
+        <div class="list list2 hide">
+            <div class=" title ">
+                <div></div>
+                <strong>现任领导管理</strong>
+                <a class="layui-btn layui-btn-normal preview" href="./schoolInfo.html" target="_blank">页面预览</a>
+            </div>
+            <table id="list2" lay-filter="list2"></table>
+            <script type="text/html" id="toolbar2">
+<!--                <a class="layui-btn" lay-event="edit">增加</a>-->
+<!--                <a class="layui-btn layui-btn-danger" lay-event="del">删除</a>-->
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" lay-event="getCheckAdd">
+                    <i class="layui-icon"></i>添加内容
+                </button>
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" lay-event="getCheckDelete">
+                    <i class="layui-icon"></i>删除内容
+                </button>
+            </script>
+            <script type="text/html " id="barDemo2">
+                <a class="layui-btn layui-btn-xs " lay-event="preinsert">上一行插入</a>
+                <a class="layui-btn layui-btn-xs " lay-event="edit">编辑</a>
+                <a class="layui-btn layui-btn-xs " lay-event="nexinsert">下一行插入</a>
+            </script>
+        </div>
+        <div class="list list3 hide">
+            <div class=" title ">
+                <div></div>
+                <strong>学校标识管理</strong>
+                <a class="layui-btn layui-btn-normal preview" href="./schoolInfo.html" target="_blank">页面预览</a>
+            </div>
+            <table id="list3" lay-filter="list3"></table>
+            <script type="text/html" id="toolbar3">
+<!--                <a class="layui-btn " lay-event="edit">增加</a>-->
+<!--                <a class="layui-btn layui-btn-danger" lay-event="del">删除</a>-->
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" lay-event="getCheckAdd">
+                    <i class="layui-icon"></i>添加内容
+                </button>
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" lay-event="getCheckDelete">
+                    <i class="layui-icon"></i>删除内容
+                </button>
+            </script>
+            <script type="text/html " id="barDemo3">
+                <a class="layui-btn layui-btn-xs " lay-event="preinsert">上一行插入</a>
+                <a class="layui-btn layui-btn-xs " lay-event="edit">编辑</a>
+                <a class="layui-btn layui-btn-xs " lay-event="nexinsert">下一行插入</a>
+            </script>
+        </div>
+        <div class="list list4 hide">
+            <div class=" title ">
+                <div></div>
+                <strong>学校位置管理</strong>
+                <a class="layui-btn layui-btn-normal preview" href="./schoolInfo.html" target="_blank">页面预览</a>
+            </div>
+            <table id="list4" lay-filter="list4"></table>
+            <script type="text/html " id="barDemo4">
+                <a class="layui-btn layui-btn-xs " lay-event="edit">编辑</a>
+            </script>
+        </div>
+        <div class="list list5 hide">
+            <div class=" title ">
+                <div></div>
+                <strong>页面信息管理</strong>
+                <a class="layui-btn layui-btn-normal preview" href="./schoolInfo.html" target="_blank">页面预览</a>
+            </div>
+            <table id="list5" lay-filter="list5"></table>
+            <script type="text/html " id="barDemo5">
+                <a class="layui-btn layui-btn-xs " lay-event="edit">编辑</a>
+            </script>
+        </div>
+    </div>
+
+    <script src="../../static/plugin/layui/layui.js "></script>
+    <script src="../../static/js/temagschinfo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>layout 后台大布局 - Layui</title>
+    <link rel="stylesheet" href="../../static/plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="../../static/css/stcourselectlimit.css">
+    <link rel="stylesheet" href="../../static/css/stcourselectpublic.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+
+
+<!--    <div class="layui-body">-->
+    <form class="layui-form aj" action="">
+        <div class="layui-inline bj ">
+            <label class="layui-form-label cj ">
+                <i class="layui-icon left-nav-li" lay-tips="学年">&#xe63f;&nbsp;</i>学年：</label>
+            <div class="layui-input-inline">
+                <!-- <input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input"> -->
+                <select name="modules" lay-verify="required" lay-search="">
+                    <option value=""></option>
+                    <option value="1">2018-2019学年</option>
+                    <option value="2">2019-2020学年</option>
+                    <option value="3">2020-2021学年</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="layui-inline bj">
+            <label class="layui-form-label"> <i class="layui-icon left-nav-li" lay-tips="学期">&#xe63f;&nbsp;</i>学期：</label>
+            <div class="layui-input-inline cj">
+                <!-- <input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input"> -->
+                <select name="modules" lay-verify="required" lay-search="">
+                    <option value=""></option>
+                    <option value="1">第一学期</option>
+                    <option value="2">第二学期</option>
+                </select>
+            </div>
+        </div>
+    </form>
+
+        <div class="layui-tab">
+
+            <ul class="layui-tab-title">
+                <li class="layui-this">公共任选</li>
+                <li>专业限选</li>
+                <li>选课</li>
+                <li>退选</li>
+                <li>专业限选</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-hide" id="test" lay-filter="test"></table>
+                </div>
+                <div class="layui-tab-item">
+                    <table class="layui-hide" id="test1" lay-filter="test1"></table>
+                </div>
+                <div class="layui-tab-item">
+                    <table class="layui-hide" id="test2" lay-filter="test1"></table>
+                </div>
+                <div class="layui-tab-item">
+                    <table class="layui-hide" id="test4" lay-filter="test1"></table>
+                </div>
+            </div>
+
+
+            </div>
+        </div>
+
+<!--    </div>-->
+
+
+
+
+<script src="../../static/layui.js"></script>
+
+<!--表单-->
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+        <button class="layui-btn layui-btn-sm" lay-event="sumbit">提交</button>
+    </div>
+
+</script>
+<script type="text/html" id="barDemo1">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+
+<script src="../../static/plugin/layui/layui.js" charset="utf-8"></script>
+<script src="../../static/js/stcourselectpublic.js"></script>
+<script src="../../static/js/stcourselectlimit.js"></script>
+<script src="../../static/js/stcourseselectresult.js"></script>
+</body>
+</html>

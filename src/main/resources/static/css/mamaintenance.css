@@ -1,0 +1,75 @@
+#applyname{
+    line-height: 100%;
+}
+#applynameh{
+     line-height: 100%;
+     margin-left: 10px;
+ }
+#applytime{
+     line-height: 100%;
+}
+#applytimeh{
+    line-height: 100%;
+    margin-left: 10px;
+}
+#title{
+    line-height: 100%;
+}
+#titleh{
+    line-height: 100%;
+    margin-left: 10px;
+}
+.olSerialNumber{
+    list-style-type:decimal;
+    list-style-position:inside;
+}
+#leftFrame{
+    overflow:scroll;
+    height: 100%;
+}
+.applyWin{
+    padding: 0;
+}
+#rightFrame{
+    overflow:scroll;
+    background-color: #FFB800;
+    height: 100%;
+}
+#rightFrame #mainWin{
+    margin: 0.4%;
+    height: 100%;
+    position: relative;
+}
+#rightFrame #mainWin #btnWin{
+    width:100%;
+    padding: 1%;
+}
+#rightFrame #mainWin #contentBigWin{
+    height: 100%;
+}
+#rightFrame #mainWin #contentBigWin #contentSmallWin{
+    margin: 0.4%;
+    padding: 2%;
+    background-color: #01AAED;
+    width: 99.2%;
+    height: 50%;
+}
+#rightFrame #mainWin #contentBigWin #contentSmallWin #oneListWin{
+    font-size: 20px;
+    margin-left: 3.5%;
+}
+#rightFrame #mainWin #twoContentBigWin{
+    height: 100%;
+}
+#rightFrame #mainWin #twoContentBigWin #id1_1{
+    margin: 0.4%; padding: 2%; display: inline-block; background-color: #01AAED; width: 99.2%;
+}
+#rightFrame #mainWin #twoContentBigWin #id1_1 #id1_1_1{
+    font-size: 20px; margin-left: 3.5%;
+}
+#rightFrame #mainWin #twoContentBigWin #id2_1{
+    margin: 0.4%; padding: 2%; display: inline-block; background-color: #01AAED; width: 99.2%;
+}
+#rightFrame #mainWin #twoContentBigWin #id2_1 #id2_1_1{
+    font-size: 20px; margin-left: 3.5%;
+}

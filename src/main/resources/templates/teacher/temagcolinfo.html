@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>院级信息管理</title>
+    <link rel="stylesheet" href="../../static/plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="../../static/css/temagcolinfo.css">
+</head>
+
+<body>
+<div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll nav">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+            <li class="layui-nav-item"><a href="javascript:;">学院概况</a></li>
+            <li class="layui-nav-item"><a href="javascript:;">院级领导</a></li>
+            <li class="layui-nav-item"><a href="javascript:;">专业简介</a></li>
+            <li class="layui-nav-item"><a href="javascript:;">新闻资讯</a></li>
+            <li class="layui-nav-item" ><a href="../../templates/teacher/collegeinfo.html" target="_blank">预览</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/html" id="toolbar1">
+    <div class="layui-btn-container">
+        <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" lay-event="getCheckAdd">
+            <i class="layui-icon layui-icon-add-1"></i>添加内容
+        </button>
+        <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" lay-event="getCheckEdit">
+            <i class="layui-icon layui-icon-edit"></i>编辑内容
+        </button>
+        <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" lay-event="getCheckDelete">
+            <i class="layui-icon layui-icon-delete"></i>删除内容
+        </button>
+    </div>
+</script>
+<div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div class="list list1">
+        <div class="title">
+            <div></div>
+            <strong>学院概况管理</strong>
+            <a class="layui-btn layui-btn-normal preview" href="../../templates/teacher/collegeinfo.html" target="_blank">查看首页</a>
+        </div>
+        <table id="list1" lay-filter="list1"></table>
+        <script type="text/html" id="barDemo1">
+            <a class="layui-btn layui-btn-xs " lay-event="edit ">编辑</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs " lay-event="del ">删除</a>
+        </script>
+    </div>
+    <div class="list list2 hide">
+        <div class=" title "><strong>院级领导管理</strong></div>
+        <table id="list2" lay-filter="list2"></table>
+        <script type="text/html " id="barDemo2">
+            <a class="layui-btn layui-btn-xs " lay-event="edit ">编辑</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs " lay-event="del ">删除</a>
+        </script>
+    </div>
+    <div class="list list3 hide">
+        <div class=" title "><strong>专业简介管理</strong></div>
+        <table id="list3" lay-filter="list3"></table>
+        <script type="text/html " id="barDemo3">
+            <a class="layui-btn layui-btn-xs " lay-event="edit ">编辑</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs " lay-event="del ">删除</a>
+        </script>
+    </div>
+    <div class="list list4 hide">
+        <div class=" title "><strong>新闻资讯管理</strong></div>
+        <table id="list4" lay-filter="list4"></table>
+        <script type="text/html " id="barDemo4">
+            <a class="layui-btn layui-btn-xs " lay-event="edit ">编辑</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs " lay-event="del ">删除</a>
+        </script>
+    </div>
+</div>
+
+<script src="../../static/plugin/layui/layui.js "></script>
+<script>
+    layui.use('table', function() {
+        var table = layui.table;
+
+        //第一个实例
+        table.render({
+            elem: '#list1',
+            toolbar: '#toolbar1',
+            height: 312,
+            data: [{
+                line: '1',
+                type: '图片',
+                content: '../static/img/11.jpg'
+            },{
+                line: '10',
+                type: '正文',
+                content: '  计算机科学与工程学院前身为惠阳师范专科学校电子计算机中心，创办于1986年。 2000年惠州大学升格为全日制普通本科高校并更名为惠州学院。 2002年6月，计算机中心与电子工程系合并组建电子信息系。 2002年6月，计算机中心与电子工程系合并组建电子信息系。 2004年7月，电子信息系的计算机科学与技术专业与公共计算机教研室合并成立计算机科学系。 2016年11月，计算机科学系更名为信息科学技术学院，2020年1月更名为计算机科学与工程学院。 办学30年来，学院秉承“产教融合，国际合作，协同育人，服务地方”的办学理念，以培养高素质应用型工科人才为办学目标 ，逐步成为国际合作办学、服务地方信息产业的特色学院。'
+            },
+            //     {
+            //     line: '6',
+            //     type: '尾部',
+            //     content: '统计数据截止于2019年9月'
+            // }
+
+            ],
+            page: true //开启分页
+            ,
+            cols: [
+                [ //表头
+                    {
+                        type: 'checkbox',
+                        fixed: 'left'
+                    }, {
+                    field: 'line',
+                    title: '行数',
+                    width: 100,
+                    fixed: 'left'
+                }, {
+                    field: 'type',
+                    title: '类型',
+                    width: 100,
+                    fixed: 'left'
+                }, {
+                    field: 'content',
+                    title: '内容',
+                    fixed: 'left'
+                }, {
+                    fixed: 'right',
+                    width: 165,
+                    align: 'center',
+                    toolbar: '#barDemo1'
+                }
+                ]
+            ]
+        });
+
+        table.render({
+            elem: '#list2',
+            toolbar: '#toolbar1',
+            height: 312,
+            data: [{
+                position: '书记',
+                name: 'XXX'
+            },{
+                position: '院长',
+                name: 'XXX'
+            }
+                ,{
+                    position: '副院长',
+                    name: 'XXX'
+                }
+                ,{
+                    position: '辅导员',
+                    name: 'XXX'
+                }
+                ,{
+                    position: '辅导员',
+                    name: 'XXX'
+                }
+                ,{
+                    position: '辅导员',
+                    name: 'XXX'
+                }
+                ],
+            page: true //开启分页
+            ,
+            cols: [
+                [ //表头
+                    {
+                        field: 'position',
+                        title: '职位',
+                        fixed: 'left'
+                    }, {
+                    field: 'name',
+                    title: '名字',
+                    fixed: 'left'
+                }, {
+                    fixed: 'right',
+                    width: 165,
+                    align: 'center',
+                    toolbar: '#barDemo2'
+                }
+                ]
+            ]
+        });
+        table.render({
+            elem: '#list3',
+            toolbar: '#toolbar1',
+            height: 312,
+            data: [{
+                title: '软件工程',
+
+                content: '培养目标：\n' +
+                    '\n' +
+                    '　　计算机应用软件开发为基本技能，掌握软件工程基础理论知识、软件开发技术与规范。具有扎实的专业理论基础和较强的实践动手能力，具有软件系统分析与设计、软件开发以及项目工程管理能力；具备大数据分析和移动互联网应用开发的基本能力；接受全面、系统的训练，适应社会信息化需求，具有一定国际视野和创新能力的高素质应用型人才。\n' +
+                    '\n' +
+                    '主要课程：\n' +
+                    '\n' +
+                    '　　面向对象程序设计、数据结构、计算机组成原理、操作系统、数据库系统、算法分析与设计、移动应用开发、云计算、大数据分析、模式识别与机器学习、软件工程、软件项目管理、数据挖掘与数据仓库、数字图像处理、计算机网络、人工智能、编译原理等。\n' +
+                    '\n' +
+                    '就业方向：\n' +
+                    '\n' +
+                    '　　在政府部门、企事业单位从事软件系统设计、开发、测试、项目管理与系统维护，以及办公自动化、电子商务、电子政务、数据分析等工作；在科研、教学单位从事科研与教学工作。'
+            },{ title: '网络工程',
+
+            content: '培养目标：\n' +
+                '\n' +
+                '　　掌握计算机、通信以及网络方面的基础理论、设计原理，熟悉各类网络系统的组网、规划、设计、评价的理论、方法与技术，具备计算机通信和网络技术以及网络工程的实践能力；具备计算机网络设备和系统的研究、设计、开发、工程应用、安全管理和维护能力；了解网络工程学科的前沿信息和发展趋势，具有一定国际视野和创新能力的高素质应用型人才。\n' +
+                '\n' +
+                '主要课程：\n' +
+                '\n' +
+                '　　计算机网络原理、计算机网络工程、网络通信程序设计、路由与交换技术、组网技术与应用、嵌入式系统、Linux系统应用、无线网络技术、信息安全导论等。\n' +
+                '\n' +
+                '就业方向：\n' +
+                '\n' +
+                '　　从事网络工程设计、网络系统管理、网络技术支持、网络信息安全与病毒入侵防范、互联网应用软件开发等工作。'
+    }
+                ,{ title: '网络空间安全',
+
+                    content: '培养目标：\n' +
+                        '\n' +
+                        '　　计算机应用软件开发为基本技能，掌握软件工程基础理论知识、软件开发技术与规范。具有扎实的专业理论基础和较强的实践动手能力，具有软件系统分析与设计、软件开发以及项目工程管理能力；具备大数据分析和移动互联网应用开发的基本能力；接受全面、系统的训练，适应社会信息化需求，具有一定国际视野和创新能力的高素质应用型人才。\n' +
+                        '\n' +
+                        '主要课程：\n' +
+                        '\n' +
+                        '　　面向对象程序设计、数据结构、计算机组成原理、操作系统、数据库系统、算法分析与设计、移动应用开发、云计算、大数据分析、模式识别与机器学习、软件工程、软件项目管理、数据挖掘与数据仓库、数字图像处理、计算机网络、人工智能、编译原理等。\n' +
+                        '\n' +
+                        '就业方向：\n' +
+                        '\n' +
+                        '　　在政府部门、企事业单位从事软件系统设计、开发、测试、项目管理与系统维护，以及办公自动化、电子商务、电子政务、数据分析等工作；在科研、教学单位从事科研与教学工作。'
+                }
+                ,{ title: '计算机科学与技术',
+
+                    content: '培养目标：\n' +
+                        '\n' +
+                        '　　掌握计算机软硬件及其应用的基础理论、专业知识和基本技能，具有较强的计算机系统分析、设计和过程实践能力；具备嵌入式系统、软件工程、计算机网络、数据库等方面的综合开发能力；了解计算机学科的前沿及发展趋势，具有一定国际视野和创新能力的高素质应用型人才。\n' +
+                        '\n' +
+                        '核心课程：\n' +
+                        '\n' +
+                        '　　面向对象程序设计、操作系统、数据库系统概论、计算机网络、软件工程、嵌入式系统、物联网应用技术、移动应用设计与开发、云计算概论等。\n' +
+                        '\n' +
+                        '就业方向：\n' +
+                        '\n' +
+                        '　　可从事计算机软硬件和信息系统的研发、应用及维护工作；能在教育、企事业单位、各级政府机关、社会团队等行业，从事计算机应用系统的研究、开发、管理等方面工作。'
+                }],
+            page: true //开启分页
+            ,
+            cols: [
+                [ //表头
+                    {
+                        field: 'title',
+                        title: '专业',
+                        width: 150,
+                        fixed: 'left'
+                    },  {
+                    field: 'content',
+                    title: '简介',
+                    fixed: 'left'
+                }, {
+                    fixed: 'right',
+                    width: 165,
+                    align: 'center',
+                    toolbar: '#barDemo3'
+                }
+                ]
+            ]
+        });
+        table.render({
+            elem: '#list4',
+            toolbar: '#toolbar1',
+            height: 312,
+            data: [{
+                name: '新闻动态',
+                addr: '关于第五届“中国高校计算机大赛-团体程序设计天梯赛”校内选拔结果通知 10-30\n' +
+                    '\n' +
+                    '惠州学院在第十一届“蓝桥杯”全国软件和信息技术专业人才大赛省赛中获得佳... 10-28\n' +
+                    '\n' +
+                    '第五届“天梯赛”报名通知 10-11\n' +
+                    '\n' +
+                    '惠州学院计算机科学与工程学院招生简章 07-14\n' +
+                    '\n' +
+                    '惠州学院第三届“阆苑好青年”评选活动方案 04-22\n' +
+                    '\n' +
+                    '计算机科学与工程学院关于举办疫情防控期课堂笔记评选活动的通知 03-20\n' +
+                    '\n' +
+                    '计算机科学与工程学院致2020届毕业生的一封信 02-07\n' +
+                    '\n' +
+                    '致计算机科学与工程学院全体师生的一封信 02-01'
+            },{
+                name: '学科竞赛',
+            addr: '【喜报】惠州学院在第十一届“蓝桥杯”全国软件和信息技术专业人才大赛全国... 11-16\n' +
+                '\n' +
+                '【风采展示】国家奖学金获得者 11-15\n' +
+                '\n' +
+                '关于举办第六届中国国际“互联网+”大学生创新创业大赛线上训练营的通知 11-12\n' +
+                '\n' +
+                '【喜报】惠州学院在第十一届“蓝桥杯”全国软件和信息技术专业人才大赛省赛... 11-11\n' +
+                '\n' +
+                '【风采展示】国家奖学金获得者 11-11\n' +
+                '\n' +
+                '【喜报】惠州学院计算机科学与工程学院学子在中国大学生程序设计竞赛中喜获... 11-11\n' +
+                '\n' +
+                '【风采展示】国家奖学金获得者 11-06\n' +
+                '\n' +
+                '【风采展示】国家奖学金获得者 11-06'
+    }
+                ,{
+                    name: '教学管理',
+                    addr: '惠州学院班主任工作条例 09-22\n' +
+                        '\n' +
+                        '惠州学院课程考核与成绩管理规定 09-22\n' +
+                        '\n' +
+                        '惠州学院考试管理规定 09-22\n' +
+                        '\n' +
+                        '惠州学院公共体育课程成绩评定办法 09-22\n' +
+                        '\n' +
+                        '惠州学院学生选修开放式网络课程和跨校课程管理办法 09-22\n' +
+                        '\n' +
+                        '惠州学院博雅课程管理暂行办法 09-22\n' +
+                        '\n' +
+                        '惠州学院考试管理规定 12-30\n' +
+                        '\n' +
+                        '计算机科学与工程学院召开期末工作布置会 12-13'
+                }
+                ,{
+                    name: '创新创业',
+                    addr: '【喜讯】计算机科学与工程学院学子在第三届“恺莘杯”惠州大学生创新创业大... 12-16\n' +
+                        '\n' +
+                        '信息科学技术学院往届创业毕业生----2012届软件工程专业郭乐彬 04-04\n' +
+                        '\n' +
+                        '信息科学技术学院往届创业毕业生----2007届计算科学与技术专业林佳齐 03-20\n' +
+                        '\n' +
+                        '信息科学技术学院往届创业毕业生----2015届计算计科学与技术专业苏军飞 03-01\n' +
+                        '\n' +
+                        '信息科学技术学院往届创业毕业生----2007届计算科学与技术专业彭钟立 02-28\n' +
+                        '\n' +
+                        '信息科学技术学院往届创业毕业生---2007届计算机科技与技术专业郑宇华 01-07\n' +
+                        '\n' +
+                        '信息科学技术学院往届创业毕业生----2008届网络工程专业杨金平 12-07\n' +
+                        '\n' +
+                        '信息科学技术学院往届创业毕业生---2011届网络工程专业谭天天、赖晓华 11-15'
+
+                }],
+            page: true //开启分页
+            ,
+            cols: [
+                [ //表头
+                    {
+                        field: 'name',
+                        title: '新闻资讯',
+                        width: 150,
+                        fixed: 'left'
+                    }, {
+                    field: 'addr',
+                    title: '详细内容',
+                    fixed: 'left'
+                }, {
+                    fixed: 'right',
+                    width: 165,
+                    align: 'center',
+                    toolbar: '#barDemo4'
+                }
+                ]
+            ]
+        });
+    });
+
+    var liDom = document.querySelectorAll(".nav li");
+    var list = document.querySelectorAll(".list");
+
+    for (var i = 0; i < liDom.length; i++) {
+        liDom[i].firstChild.index = i;
+        liDom[i].addEventListener("click", function(eve) {
+            for (var i = 0; i < list.length; i++)
+                if (!hasClass(list[i], "hide"))
+                    addClass(list[i], "hide")
+            removeClass(list[eve.target.index], "hide");
+        })
+    }
+
+
+    function hasClass(elements, cName) {
+        return !!elements.className.match(new RegExp("(\\s|^)" + cName + "(\\s|$)"));
+    };
+
+    function addClass(elements, cName) {
+        if (!hasClass(elements, cName)) {
+            elements.className += " " + cName;
+        };
+    };
+
+    function removeClass(elements, cName) {
+        if (hasClass(elements, cName)) {
+            elements.className = elements.className.replace(new RegExp("(\\s|^)" + cName + "(\\s|$)"), " ");
+        };
+    };
+</script>
+
+</body>
+
+</html>
